@@ -1,20 +1,18 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : papercraft_db
+ Source Server         : localhost_3307
  Source Server Type    : MySQL
- Source Server Version : 80044 (8.0.44)
+ Source Server Version : 80045 (8.0.45)
  Source Host           : localhost:3307
  Source Schema         : papercraft_db
 
  Target Server Type    : MySQL
- Target Server Version : 80044 (8.0.44)
+ Target Server Version : 80045 (8.0.45)
  File Encoding         : 65001
 
- Date: 12/04/2026 10:32:23
+ Date: 26/04/2026 21:36:33
 */
-CREATE DATABASE IF NOT EXISTS papercraft_db;
-USE papercraft_db;
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -37,11 +35,12 @@ CREATE TABLE `address`  (
   `is_default` bit(1) NULL DEFAULT b'1',
   PRIMARY KEY (`id`) USING BTREE,
   CONSTRAINT `fk_user` FOREIGN KEY (`id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
+INSERT INTO `address` VALUES (2, 3, 'Hinh Nè', 'Thiết', 'VN', 'hn', '74, Tan Thanh', '12121', '23130110@st.hcmuaf.edu.vn', '0866501452', b'1');
 
 -- ----------------------------
 -- Table structure for blog
@@ -65,7 +64,7 @@ CREATE TABLE `blog`  (
 -- Records of blog
 -- ----------------------------
 INSERT INTO `blog` VALUES (1, 1, 'Bảo Trì Máy In: 7 Bước Đơn Giản Kéo Dài Tuổi Thọ Thiết Bị', 'Bảo Trì', '<p><strong style=\"line-height: 1.5;\">Bảo trì máy in định kỳ là yếu tố then chốt để đảm bảo thiết bị của bạn hoạt động ổn định, cho ra bản in chất lượng và kéo dài tuổi thọ.</strong></p><p><span style=\"line-height: 1.2;\">Nhiều doanh nghiệp thường bỏ qua việc này, chỉ gọi kỹ thuật khi máy đã hỏng. Điều này không chỉ gây gián đoạn công việc mà còn tốn kém chi phí sửa chữa. Thay vào đó, chỉ với 7 bước đơn giản sau đây, bạn có thể tự mình \"chăm sóc\" chiếc máy in của mình ngay tại văn phòng.</span></p><h2><span style=\"line-height: 1.2;\">1. Vệ sinh bên ngoài thường xuyên</span></h2><p><span style=\"line-height: 1.2;\">Bụi bẩn là kẻ thù số một. Sử dụng một chiếc khăn mềm, ẩm (không ướt) để lau sạch bụi bẩn bám trên vỏ máy, khay giấy và các khe hở. Đừng bao giờ sử dụng cồn hoặc dung môi mạnh vì chúng có thể làm hỏng bề mặt nhựa.</span></p><h2><span style=\"line-height: 1.2;\">2. Dọn dẹp bên trong máy</span></h2><p><span style=\"line-height: 1.2;\">Tắt nguồn và rút phích cắm máy in. Mở nắp máy và cẩn thận lấy hộp mực (cartridge) ra. Sử dụng máy hút bụi mini hoặc bình xịt khí nén để loại bỏ bụi giấy, mực vương vãi và các vật thể lạ (như ghim kẹp) bên trong máy.</span></p><h2><span style=\"line-height: 1.2;\">3. Kiểm tra và làm sạch trục kéo giấy (Roller)</span></h2><p><span style=\"line-height: 1.2;\">Trục kéo giấy bẩn hoặc mòn là nguyên nhân chính gây kẹt giấy. Dùng một miếng vải sạch thấm một chút cồn isopropyl (cồn y tế) để lau nhẹ các con lăn cao su. Điều này giúp phục hồi độ bám và kéo giấy tốt hơn.</span></p><blockquote><em style=\"line-height: 1.2;\">Trích dẫn: \"Một máy in được cập nhật firmware đầy đủ có thể giảm đến 30% nguy cơ lỗi vặt liên quan đến kết nối.\" - Chuyên gia từ PaperCraft.</em></blockquote><h2><span style=\"line-height: 1.2;\">4. Cập nhật Firmware/Driver</span></h2><p><span style=\"line-height: 1.2;\">Các nhà sản xuất (như HP, Canon, Brother) thường xuyên phát hành các bản cập nhật phần mềm (firmware) để sửa lỗi và cải thiện hiệu suất. Hãy truy cập trang web của hãng để tải về và cài đặt phiên bản mới nhất cho máy in của bạn.</span></p><ul><li><span style=\"line-height: 1.2;\">Lỗi kết nối Wi-Fi.</span></li><li><span style=\"line-height: 1.2;\">Vấn đề tương thích với hệ điều hành mới.</span></li><li><span style=\"line-height: 1.2;\">Tối ưu hóa tốc độ in.</span></li></ul><h2><span style=\"line-height: 1.2;\">5. Sử dụng mực và giấy chính hãng</span></h2><p><span style=\"line-height: 1.2;\">Đây là điều chúng tôi không thể không nhấn mạnh. Sử dụng mực in giả, kém chất lượng có thể làm hỏng đầu phun và các bộ phận bên trong. Giấy quá mỏng hoặc quá dày (không đúng khuyến cáo) cũng dễ gây kẹt giấy.</span></p>', '2025-12-30 06:10:07', 'Hướng dẫn chi tiết cách bảo trì máy in định kỳ để đảm bảo máy hoạt động tốt và bền bỉ theo thời gian.', 0x31);
-INSERT INTO `blog` VALUES (2, 2, 'ọabfkjabfjkfka', 'Văn Phòng Phẩm', '<p>ửteryeryeryerye</p>', '2026-03-25 12:45:10', 'jiolkwhtoiwhto', 0x30);
+INSERT INTO `blog` VALUES (2, 2, 'ọabfkjabfjkfka', 'Văn Phòng Phẩm', '<p>ửteryeryeryerye</p>', '2026-03-25 12:45:10', 'jiolkwhtoiwhto', 0x31);
 
 -- ----------------------------
 -- Table structure for category
@@ -76,7 +75,7 @@ CREATE TABLE `category`  (
   `category_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of category
@@ -440,8 +439,8 @@ INSERT INTO `image` VALUES (302, 88, 'product', 'but-chi-go-thien-long-diem-10-2
 INSERT INTO `image` VALUES (303, 88, 'product', 'but-chi-go-thien-long-diem-10-2b-tp-gp009-do-2.jpg', b'0', '2026-01-27 19:37:51');
 INSERT INTO `image` VALUES (304, 88, 'product', 'but-chi-go-thien-long-diem-10-2b-tp-gp009-do-3.jpg', b'0', '2026-01-27 19:37:51');
 INSERT INTO `image` VALUES (305, 89, 'product', 'but-chi-bam-thien-long-pc-01-tn.jpg', b'1', '2026-01-27 19:37:51');
-INSERT INTO `image` VALUES (306, 89, 'product', 'but-chi-bam-thien-long-pc-01-1.jpg', b'0', '2026-01-27 19:37:51');
-INSERT INTO `image` VALUES (307, 89, 'product', 'but-chi-bam-thien-long-pc-01-2.jpg', b'0', '2026-01-27 19:37:51');
+INSERT INTO `image` VALUES (306, 89, 'product', 'but-chi-bam-thien-long-pc-01-2.jpg', b'0', '2026-01-27 19:37:51');
+INSERT INTO `image` VALUES (307, 89, 'product', 'but-chi-bam-thien-long-pc-01-3.jpg', b'0', '2026-01-27 19:37:51');
 INSERT INTO `image` VALUES (308, 89, 'product', 'but-chi-bam-thien-long-pc-01-3.jpg', b'0', '2026-01-27 19:37:51');
 INSERT INTO `image` VALUES (309, 90, 'product', 'combo-10-but-chi-go-den-nhan-vat-demon-slayer-thien-long-gp-030-ds-mau-ngau-nhien-tn.jpg', b'1', '2026-01-27 19:37:51');
 INSERT INTO `image` VALUES (310, 90, 'product', 'combo-10-but-chi-go-den-nhan-vat-demon-slayer-thien-long-gp-030-ds-mau-ngau-nhien-1.jpg', b'0', '2026-01-27 19:37:51');
@@ -886,7 +885,7 @@ INSERT INTO `orders` VALUES (3, 3, 'shipped', 12146085.00, 'fdsafdsfds (PTTT: CO
 INSERT INTO `orders` VALUES (4, 3, 'pending', 12146085.00, ' (PTTT: COD)', 0.00, 'Hinh Nguyen', '0866501452', 'Hcm, hcm, VN', '2026-01-27 10:18:46');
 INSERT INTO `orders` VALUES (5, 3, 'pending', 5258820.00, 'hjgjghjgh (PTTT: COD)', 0.00, 'jvghjkh', '0373052604', 'jhjhjgh, TP.Hồ Chí Minh, VN', '2026-01-28 02:10:01');
 INSERT INTO `orders` VALUES (6, 2, 'pending', 31535448.00, ' (PTTT: COD)', 0.00, 'Tân Hoàng Duy', '0373052605', '83/16, Tân Phong, Biên Hòa, TP.Hồ Chí Minh, VN', '2026-03-05 07:55:37');
-INSERT INTO `orders` VALUES (7, 2, 'canceled', 75060405.00, ' (PTTT: COD)', 0.00, 'Tân Hoàng Duy', '0123456780', '83/16, Tân Phong, Biên Hòa, TP.Hồ Chí Minh, VN', '2026-03-06 12:57:38');
+INSERT INTO `orders` VALUES (7, 2, 'shipped', 75060405.00, ' (PTTT: COD)', 0.00, 'Tân Hoàng Duy', '0123456780', '83/16, Tân Phong, Biên Hòa, TP.Hồ Chí Minh, VN', '2026-03-30 15:57:26');
 
 -- ----------------------------
 -- Table structure for payment
@@ -903,11 +902,14 @@ CREATE TABLE `payment`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_payment_order`(`order_id` ASC) USING BTREE,
   CONSTRAINT `fk_payment_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of payment
 -- ----------------------------
+INSERT INTO `payment` VALUES (1, 5, 'COD', 10000000.00, b'1', 'shfjdffsdf', '2026-04-25 16:43:29');
+INSERT INTO `payment` VALUES (2, 3, 'COD', 20000000.00, b'1', 'dfdsgghh', '2026-03-12 12:28:08');
+INSERT INTO `payment` VALUES (3, 2, 'COD', 5000000.00, b'1', 'dfdgdfgh', '2026-01-12 12:37:23');
 
 -- ----------------------------
 -- Table structure for product
@@ -1071,9 +1073,6 @@ INSERT INTO `product` VALUES (134, 9, 'Gói dụng cụ văn phòng tiện ích 
 INSERT INTO `product` VALUES (135, 9, 'Gói dụng cụ văn phòng tiện ích 4', 'Thương hiệu: Thiên Long#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'Thiên Long là thương hiệu \"quốc dân\" hàng đầu tại Việt Nam trong lĩnh vực văn phòng phẩm và dụng cụ học tập. Với lịch sử hơn 40 năm phát triển, Thiên Long khẳng định vị thế bằng các dòng sản phẩm chất lượng cao, thiết kế sáng tạo và gần gũi như bút bi, bút chì, tập học sinh và dụng cụ mỹ thuật Colokit. Sản phẩm Thiên Long không chỉ bền bỉ mà còn luôn cải tiến để đồng hành cùng mọi thế hệ người Việt từ trường học đến công sở.', 'Loại sản phẩm: Dụng cụ văn phòng#Thương hiệu: Thiên Long - FlexOffice#Chất liệu: Nhựa, giấy, kim loại#Trọng lượng: 550g#Khuyến cáo: Tránh nguồn nhiệt, hóa chất.', 'Thiên Long', DEFAULT, 511500.00, 0.15, 65, '2026-01-27 19:49:37');
 INSERT INTO `product` VALUES (136, 9, 'Máy tính khoa học Thiên Long Flexio Fx509VN - Có hơn 240 tính năng', 'Thương hiệu: Thiên Long#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'Thiên Long là thương hiệu \"quốc dân\" hàng đầu tại Việt Nam trong lĩnh vực văn phòng phẩm và dụng cụ học tập. Với lịch sử hơn 40 năm phát triển, Thiên Long khẳng định vị thế bằng các dòng sản phẩm chất lượng cao, thiết kế sáng tạo và gần gũi như bút bi, bút chì, tập học sinh và dụng cụ mỹ thuật Colokit. Sản phẩm Thiên Long không chỉ bền bỉ mà còn luôn cải tiến để đồng hành cùng mọi thế hệ người Việt từ trường học đến công sở.', 'Loại sản phẩm: Máy tính điện tử#Thương hiệu: Flexio (Thiên Long)#Chất liệu: Nhựa cao cấp#Trọng lượng: 150g#Khuyến cáo: Tránh va đập mạnh, tránh nguồn nhiệt và nước.', 'Thiên Long', DEFAULT, 158400.00, 0.15, 89, '2026-01-27 19:49:37');
 INSERT INTO `product` VALUES (137, 9, 'Máy tính khoa học Thiên Long Flexio Fx799VN, 4 màu pastel mới, bảo hành 7 năm, 1 đổi 1 trong 1 năm đầu', 'Thương hiệu: Thiên Long#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'Thiên Long là thương hiệu \"quốc dân\" hàng đầu tại Việt Nam trong lĩnh vực văn phòng phẩm và dụng cụ học tập. Với lịch sử hơn 40 năm phát triển, Thiên Long khẳng định vị thế bằng các dòng sản phẩm chất lượng cao, thiết kế sáng tạo và gần gũi như bút bi, bút chì, tập học sinh và dụng cụ mỹ thuật Colokit. Sản phẩm Thiên Long không chỉ bền bỉ mà còn luôn cải tiến để đồng hành cùng mọi thế hệ người Việt từ trường học đến công sở.', 'Loại sản phẩm: Máy tính điện tử#Thương hiệu: Flexio (Thiên Long)#Chất liệu: Nhựa cao cấp#Trọng lượng: 160g#Khuyến cáo: Tránh va đập mạnh, tránh nguồn nhiệt và nước.', 'Thiên Long', DEFAULT, 856000.00, 0.10, 92, '2026-01-27 19:49:37');
-INSERT INTO `product` VALUES (138, 9, 'Dao rọc giấy Thiên Long - Khóa tự động thông minh - Khay đựng dao nâng cấp chắc chắn an toàn hơn', 'Thương hiệu: Thiên Long#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'Thiên Long là thương hiệu \"quốc dân\" hàng đầu tại Việt Nam trong lĩnh vực văn phòng phẩm và dụng cụ học tập. Với lịch sử hơn 40 năm phát triển, Thiên Long khẳng định vị thế bằng các dòng sản phẩm chất lượng cao, thiết kế sáng tạo và gần gũi như bút bi, bút chì, tập học sinh và dụng cụ mỹ thuật Colokit. Sản phẩm Thiên Long không chỉ bền bỉ mà còn luôn cải tiến để đồng hành cùng mọi thế hệ người Việt từ trường học đến công sở.', 'Loại sản phẩm: Máy tính điện tử#Thương hiệu: Flexio (Thiên Long)#Chất liệu: Nhựa cao cấp#Trọng lượng: 160g#Khuyến cáo: Tránh va đập mạnh, tránh nguồn nhiệt và nước.', 'Thiên Long', DEFAULT, 37100.00, 0.10, 90, '2026-01-27 19:49:37');
-INSERT INTO `product` VALUES (139, 9, 'Kéo Flexoffice FO-SC03', 'Thương hiệu: Flexoffice#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'FlexOffice là thương hiệu cao cấp thuộc tập đoàn Thiên Long, tập trung chuyên biệt vào các giải pháp dụng cụ văn phòng hiện đại và chuyên nghiệp. Với tiêu chuẩn chất lượng quốc tế, FlexOffice cung cấp hệ sinh thái sản phẩm đa dạng từ file hồ sơ, bìa trình ký, máy tính khoa học đến các loại bút viết chuyên dụng. Đây là sự lựa chọn ưu tiên cho các doanh nghiệp và văn phòng hiện đại nhờ thiết kế tối giản, tinh tế và tính ứng dụng tối ưu trong công việc.', 'Loại sản phẩm: Dụng cụ văn phòng#Thương hiệu: FlexOffice#Chất liệu: Nhựa, thép không gỉ#Trọng lượng: 80g#Khuyến cáo: Sản phẩm có vật sắc nhọn, để xa tầm tay trẻ em.', 'FlexOffice', DEFAULT, 29700.00, 0.10, 69, '2026-01-27 19:49:37');
-INSERT INTO `product` VALUES (140, 9, 'Combo 10 Bút lông dầu Hoshi Thiên Long PM-019/HS - Công nghệ Nhật Bản', 'Thương hiệu: Thiên Long#Tình trạng: Còn hàng#Đơn vị chịu trách nhiệm: Tập đoàn Thiên Long', 'Thiên Long là thương hiệu \"quốc dân\" hàng đầu tại Việt Nam trong lĩnh vực văn phòng phẩm và dụng cụ học tập. Với lịch sử hơn 40 năm phát triển, Thiên Long khẳng định vị thế bằng các dòng sản phẩm chất lượng cao, thiết kế sáng tạo và gần gũi như bút bi, bút chì, tập học sinh và dụng cụ mỹ thuật Colokit. Sản phẩm Thiên Long không chỉ bền bỉ mà còn luôn cải tiến để đồng hành cùng mọi thế hệ người Việt từ trường học đến công sở.', 'Loại sản phẩm: Bút lông dầu#Thương hiệu: Thiên Long#Chất liệu: Nhựa, mực dầu#Trọng lượng: 120g#Khuyến cáo: Đậy nắp sau khi sử dụng, tránh nguồn nhiệt.', 'Thiên Long', DEFAULT, 149000.00, 0.15, 78, '2026-01-27 19:49:37');
 
 -- ----------------------------
 -- Table structure for review
@@ -1092,7 +1091,7 @@ CREATE TABLE `review`  (
   CONSTRAINT `fk_review_product'` FOREIGN KEY (`user_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `fk_review_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `chk_rating` CHECK (`rating` between 1 and 5)
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of review
@@ -1104,7 +1103,6 @@ INSERT INTO `review` VALUES (4, 1, 53, 4, 'Hiệu năng rất tốt', '2025-12-2
 INSERT INTO `review` VALUES (5, 1, 14, 3, 'Sản phẩm khá tốt', '2025-12-25 06:30:54');
 INSERT INTO `review` VALUES (6, 1, 14, 2, 'Màu dễ bám bụi', '2025-12-25 06:33:55');
 INSERT INTO `review` VALUES (7, 1, 11, 4, 'Mua được lúc giảm giá, khá hời', '2025-12-25 06:44:04');
-INSERT INTO `review` VALUES (8, 2, 115, 4, 'Chất lượng giấy khá tốt', '2026-04-11 02:25:14');
 
 -- ----------------------------
 -- Table structure for setting
@@ -1114,7 +1112,7 @@ CREATE TABLE `setting`  (
   `setting_key` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `setting_value` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`setting_key`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of setting
@@ -1147,16 +1145,17 @@ CREATE TABLE `users`  (
   `status` bit(1) NOT NULL DEFAULT b'0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fullname` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci GENERATED ALWAYS AS (concat(`fname`,_utf8mb4'  ',`lname`)) STORED NULL,
+  `auth_provider` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT 'LOCAL',
+  `auth_provider_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Hoang', 'Tan', 'admin@gmail.com', '40e297abc926e09c2ead69e10ea02959', '0123456789', 'admin', 'male', b'1', '2025-12-24 14:12:11', DEFAULT);
-INSERT INTO `users` VALUES (2, 'Hoang', 'Tan', '23130291@st.hcmuaf.edu.vn', '07b7f1730a730bfcc4bd4c5fe2a648e2', '0373052604', 'user', 'male', b'1', '2025-12-30 15:50:08', DEFAULT);
-INSERT INTO `users` VALUES (3, 'Hinh', 'Nguyen', '23130110@st.hcmuaf.edu.vn', '827ccb0eea8a706c4c34a16891f84e7b', '0866501452', 'user', 'male', b'1', '2026-01-26 10:43:32', DEFAULT);
-INSERT INTO `users` VALUES (5, '', 'papercraft', 'papercraft1784@gmail.com', '', '', 'user', '', b'1', '2026-03-29 09:49:51', DEFAULT);
-INSERT INTO `users` VALUES (8, 'Tân', 'Duy', 'hoangtan130405@gmail.com', '07b7f1730a730bfcc4bd4c5fe2a648e2', '0373052604', 'user', 'male', b'1', '2026-04-09 08:56:04', DEFAULT);
+INSERT INTO `users` VALUES (1, 'Hoang', 'Tan', 'admin@gmail.com', '40e297abc926e09c2ead69e10ea02959', '0123456789', 'admin', 'male', b'1', '2025-12-24 14:12:11', DEFAULT, 'LOCAL', NULL);
+INSERT INTO `users` VALUES (2, 'Hoang', 'Tan', '23130291@st.hcmuaf.edu.vn', '07b7f1730a730bfcc4bd4c5fe2a648e2', '0373052604', 'user', 'male', b'1', '2025-12-30 15:50:08', DEFAULT, 'LOCAL', NULL);
+INSERT INTO `users` VALUES (3, 'Hinh', 'Nguyen', '23130110@st.hcmuaf.edu.vn', '827ccb0eea8a706c4c34a16891f84e7b', '0866501452', 'admin', 'male', b'1', '2026-01-26 10:43:32', DEFAULT, 'LOCAL', NULL);
+INSERT INTO `users` VALUES (5, '', 'papercraft', 'papercraft1784@gmail.com', '', '', 'admin', '', b'1', '2026-03-29 09:49:51', DEFAULT, 'LOCAL', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
